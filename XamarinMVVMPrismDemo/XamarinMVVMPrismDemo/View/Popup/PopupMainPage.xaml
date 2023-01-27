@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XamarinMVVMPrismDemo.View.Popup.PopupMainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    prism:ViewModelLocator.AutowireViewModel="True">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Entry Text="{Binding Message}" />
+            <Button Command="{Binding ShowPopupCommand}" Text="Show Popup" />
+            <Button Command="{Binding ShowDialogCommand}" Text="Show Dialog" />
+            <!--<Label Text="Test" />-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

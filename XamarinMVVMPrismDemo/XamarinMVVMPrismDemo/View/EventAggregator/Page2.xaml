@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XamarinMVVMPrismDemo.View.EventAggregator.Page2"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Padding="20"
+    BackgroundColor="White">
+    <ContentPage.Content>
+        <Frame HasShadow="true" VerticalOptions="Center">
+            <StackLayout>
+                <Label HorizontalTextAlignment="Center" Text="{Binding Title}" />
+
+                <StackLayout
+                    Padding="50"
+                    HorizontalOptions="Center"
+                    Orientation="Horizontal">
+                    <Label HorizontalOptions="FillAndExpand" Text="Isn't this fun?" />
+                    <Switch IsToggled="{Binding IsFun}" />
+                </StackLayout>
+                <Button Command="{Binding SubmitCommand}" Text="Submit" />
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage
+    x:Class="XamarinMVVMPrismDemo.View.Master.MasterDetailsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    x:Name="page"
+    Title="Main Page"
+    prism:ViewModelLocator.AutowireViewModel="True">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu" Padding="{OnPlatform Default='20', iOS='20,40'}">
+            <StackLayout>
+                <Label
+                    Margin="0,20"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    Text="Master Detail Demo" />
+                <Button
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="HomePage"
+                    Text="Home" />
+                <Button
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="AboutUsPage"
+                    Text="About" />
+                <Button
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="ContactPage"
+                    Text="Contact Page" />
+                <Button
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="EventAggeregatorMainPage"
+                    Text="EventAgr" />
+
+                <Button
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="PageLifecycleAwareMainPage"
+                    Text="PageLifecycle" />
+
+                <Button
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="XAMLMainPage"
+                    Text="XAMLNavigation" />
+
+                <Button
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="DeviceServiceMainPage"
+                    Text="DeviceService" />
+
+                <Button
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="NavigationModeMainPage"
+                    Text="NavigationMode" />
+
+                <Button
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="EventToCommandMainPage"
+                    Text="EventToCommand" />
+
+                <Button
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="PopupMainPage"
+                    Text="PopupMainPage" />
+
+                <!--<Button
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="TabbedPage?createTab=TabA&amp;createTab=TabB"
+                    Text="TabbedPage" />-->
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>

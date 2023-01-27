@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XamarinMVVMPrismDemo.View.AboutUsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prsim="http://prismlibrary.com"
+    Title="{Binding Title}"
+    prsim:ViewModelLocator.AutowireViewModel="True">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Label
+                FontSize="20"
+                HorizontalOptions="CenterAndExpand"
+                Text="Welcome to the about us page"
+                TextColor="Black"
+                VerticalOptions="CenterAndExpand" />
+
+            <Label
+                FontSize="20"
+                HorizontalOptions="CenterAndExpand"
+                Text="{Binding NavigateFrom}"
+                TextColor="Green"
+                VerticalOptions="CenterAndExpand" />
+
+            <Button Command="{Binding NavigateCommand}" Text="Navigate to Contact Page" />
+            <Button Command="{Binding NavigateBackCommand}" Text="Navigate back" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

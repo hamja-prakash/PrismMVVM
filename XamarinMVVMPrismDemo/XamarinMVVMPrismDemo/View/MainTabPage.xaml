@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage
+    x:Class="XamarinMVVMPrismDemo.View.MainTabPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:XamarinMVVMPrismDemo.View.Tabs"
+    xmlns:prism="http://prismlibrary.com"
+    Title="CompositeCommands"
+    prism:ViewModelLocator.AutowireViewModel="True">
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Command="{Binding ApplicationCommands.SaveCommand}" Text="Save All" />
+        <ToolbarItem Command="{Binding ApplicationCommands.ResetCommand}" Text="Reset" />
+    </TabbedPage.ToolbarItems>
+    <local:TabA />
+    <local:TabB />
+    <local:TabC />
+</TabbedPage>

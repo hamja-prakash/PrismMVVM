@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XamarinMVVMPrismDemo.View.EventToCommandBehavior.EventArgsConverterExamplePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converter="clr-namespace:XamarinMVVMPrismDemo.Converter"
+    xmlns:models="clr-namespace:XamarinMVVMPrismDemo.Model"
+    xmlns:prism="http://prismlibrary.com"
+    Title="{Binding Title}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:ItemTappedEventArgsConverter x:Key="itemTappedEventArgsConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ListView
+        Margin="0,20"
+        ItemsSource="{Binding Developers}"
+        SelectionMode="None"
+        SeparatorVisibility="None">
+        <ListView.ItemTemplate>
+            <DataTemplate x:DataType="models:Developer">
+
+                <TextCell Detail="{Binding Country}" Text="{Binding FullName}" />
+
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+        <ListView.Behaviors>
+            <prism:EventToCommandBehavior
+                Command="{Binding SelectedDeveloperCommand}"
+                EventArgsConverter="{StaticResource itemTappedEventArgsConverter}"
+                EventName="ItemTapped" />
+        </ListView.Behaviors>
+    </ListView>
+
+</ContentPage>

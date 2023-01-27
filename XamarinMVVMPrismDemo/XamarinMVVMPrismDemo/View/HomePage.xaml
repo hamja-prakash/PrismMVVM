@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XamarinMVVMPrismDemo.View.HomePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    Title="{Binding Title}"
+    prism:ViewModelLocator.AutowireViewModel="True">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="CenterAndExpand">
+            <Grid Margin="0,20" HorizontalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Label
+                    Grid.Row="0"
+                    FontSize="20"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Welcome to the Home Page"
+                    TextColor="Black"
+                    VerticalOptions="CenterAndExpand" />
+
+                <Button
+                    Grid.Row="1"
+                    Command="{Binding NavigateCommand}"
+                    Text="Navigate to About Us Page" />
+
+
+                <Button
+                    Grid.Row="2"
+                    Command="{prism:ShowDialog NameDialog}"
+                    CommandParameter="NameDialog"
+                    Text="Open Dialog" />
+
+                <Button
+                    Grid.Row="3"
+                    Command="{Binding NavigateVMInitialization}"
+                    Text="Navigate to VMIntialization" />
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
